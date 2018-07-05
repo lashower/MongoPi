@@ -108,11 +108,12 @@ eColor "Starting MongoDB"
 
 sudo service mongodb start;
 
-read -p "Completed install. Do you want to bring down MongoDB? [y/n]" confirm;
+echo -n "Completed install. Do you want to bring down MongoDB? [y/n]"
+read answer
 
-if [ "$confirm" == "y" ];then
+if [ "$answer" != "${answer#[Yy]}" ] ;then
 	eColor "Stopping MongoDB.";
-	sudo service mongodb start;
+	sudo service mongodb stop;
 fi
 cd ~
 rm -fr mongodb_install
