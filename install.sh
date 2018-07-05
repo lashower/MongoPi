@@ -2,6 +2,7 @@ eColor()
 {
 	if [ -z "$2" ]; then echo -e "\e[1;32m${1}\e[0m";
 	else echo -e "\e[1;${1}m${2}\e[0m";
+	fi
 }
 eColor "As always make sure you have updated your R-Pi"
 
