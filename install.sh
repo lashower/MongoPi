@@ -66,7 +66,7 @@ sudo cp -p tools/mongo* /usr/bin
 
 sudo mkdir -p /var/log/mongodb;
 sudo chown mongodb:mongodb /var/log/mongodb;
-sudo mkdir /var/lib/mongodb
+sudo mkdir -p /var/lib/mongodb
 
 sudo chown mongodb:mongodb /var/lib/mongodb
 sudo chmod 775 /var/lib/mongodb
@@ -108,7 +108,7 @@ eColor "Starting MongoDB"
 
 sudo service mongodb start;
 
-read -p "Completed install. Do you want to bring down MongoDB? [y/n]"  confirm;
+read -p "Completed install. Do you want to bring down MongoDB? [y/n]" confirm;
 
 if [ "$confirm" == "y" ];then
 	eColor "Stopping MongoDB.";
